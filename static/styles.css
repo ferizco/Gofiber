@@ -1,0 +1,101 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+h2 { 
+    text-align: center;
+  }
+  
+  
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+    position: relative;
+  }
+
+  .container::before {
+    content: "";
+    background-image: url(https://images.hukumonline.com/frontend/lt5c24324708883/lt5c35c5db8631a.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(2px);
+    z-index: -1;
+  }
+  
+  form {
+    text-align: left;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: transparent;
+  }
+
+  input:focus{
+    border: 1px solid white;
+  }
+
+
+  
+  button {
+    background-color: #6c9de7;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #6c9de7;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  
+  /* Menambahkan gaya untuk kolom Rating */
+  .rating-column {
+    font-size: 18px;
+    color: #f39c12;
+  }
+  

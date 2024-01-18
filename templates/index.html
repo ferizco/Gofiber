@@ -1,0 +1,82 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Halaman Web Sederhana</title>
+</head>
+<body>
+
+    <header>
+        <h1>Selamat Datang di Halaman Saya</h1>
+        <div class="h2">{{ .Title }}</div>
+    </header>
+
+    <main>
+        <p>Ini adalah halaman web sederhana menggunakan HTML.</p>
+        <p>Silakan ubah konten sesuai kebutuhan Anda.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Nama Anda. Hak Cipta Dilindungi Undang-Undang.</p>
+    </footer>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Buku</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+        <div class="content">
+    <form action="/add" method="post">
+      <h2>Favorite Books Form</h2>
+      <div class="form-group">
+        <label for="judul">Book Subject:</label>
+        <input type="text" id="judul" name="judul" required>
+      </div>
+
+      <div class="form-group">
+        <label for="penulis">Book Author:</label>
+        <input type="text" id="penulis" name="penulis" required>
+      </div>
+
+      <div class="form-group">
+        <label for="rating">Rating:</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" required>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <table id="tableBuku">
+      <thead>
+        <tr>
+          <th>Book Subjects</th>
+          <th>Author</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range .Books }}
+        <tr>
+          <td>{{ .Judul }}</td>
+          <td>{{ .Penulis }}</td>
+          <td>{{ .Rating }}</td>
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+</div>
+</div>
+</body>
+</html>
