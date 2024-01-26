@@ -21,18 +21,6 @@ h2 {
     position: relative;
   }
 
-  .container::before {
-    content: "";
-    background-image: url(https://images.hukumonline.com/frontend/lt5c24324708883/lt5c35c5db8631a.jpg);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    filter: blur(2px);
-    z-index: -1;
-  }
-  
   form {
     text-align: left;
   }
@@ -61,8 +49,6 @@ h2 {
     border: 1px solid white;
   }
 
-
-  
   button {
     background-color: #6c9de7;
     color: #fff;
@@ -92,10 +78,27 @@ h2 {
     text-align: left;
   }
   
+  .rating-options {
+    display: flex;
+}
+
+.rating-options input {
+    display: none;
+}
+
+.rating-options label {
+    cursor: pointer;
+    margin-right: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.rating-options input:checked + label {
+    background-color: #f7d203; /* Change color for the selected rating */
+}
+
+
+
+
   
-  /* Menambahkan gaya untuk kolom Rating */
-  .rating-column {
-    font-size: 18px;
-    color: #f39c12;
-  }
   

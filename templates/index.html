@@ -1,31 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Halaman Web Sederhana</title>
-</head>
-<body>
-
-    <header>
-        <h1>Selamat Datang di Halaman Saya</h1>
-        <div class="h2">{{ .Title }}</div>
-    </header>
-
-    <main>
-        <p>Ini adalah halaman web sederhana menggunakan HTML.</p>
-        <p>Silakan ubah konten sesuai kebutuhan Anda.</p>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Nama Anda. Hak Cipta Dilindungi Undang-Undang.</p>
-    </footer>
-
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,8 +24,28 @@
 
       <div class="form-group">
         <label for="rating">Rating:</label>
-        <input type="number" id="rating" name="rating" min="1" max="5" required>
-      </div>
+        <div class="rating-options">
+            <input type="radio" id="star5" name="rating" value="5" required>
+            <label for="star5">5</label>
+    
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">4</label>
+    
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">3</label>
+    
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">2</label>
+    
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">1</label>
+        </div>
+    </div>
+    
+    
+    
+    
+    
 
       <button type="submit">Submit</button>
     </form>
