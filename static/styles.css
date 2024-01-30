@@ -78,24 +78,66 @@ h2 {
     text-align: left;
   }
   
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
   .rating-options {
-    display: flex;
-}
-
-.rating-options input {
-    display: none;
-}
-
-.rating-options label {
-    cursor: pointer;
-    margin-right: 5px;
-    padding: 5px;
-    border: 1px solid #ccc;
-}
-
-.rating-options input:checked + label {
-    background-color: #f7d203; /* Change color for the selected rating */
-}
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+  }
+  
+  .rating-options:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+  }
+  .rating-options:not(:checked) > label {
+    float:right;
+    width:32px;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+  }
+  .rating-options:not(:checked) > label:before {
+    content: '★ ';
+  }
+  .rating-options > input:checked ~ label {
+    color: #f7d203;    
+  }
+  
+  .star-item {
+    color: transparent;
+  }
+  
+  .star-item::before {
+    content: '';
+    color: #f7d203;
+  }
+  
+  .star-item[data-rating="1"]::before {
+    content: '★';
+  }
+  
+  .star-item[data-rating="2"]::before {
+    content: '★★';
+  }
+  
+  .star-item[data-rating="3"]::before {
+    content: '★★★';
+  }
+  
+  .star-item[data-rating="4"]::before {
+    content: '★★★★';
+  }
+  
+  .star-item[data-rating="5"]::before {
+    content: '★★★★★';
+  }
 
 
 
