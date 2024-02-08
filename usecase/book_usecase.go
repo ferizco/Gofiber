@@ -36,7 +36,7 @@ func (uc *bookUsecase) AddBook(judul, penulis, rating string) error {
 }
 
 func (uc *bookUsecase) DeleteBook(id int) error {
-
+	// Implement logic to delete the book from the repository
 	return uc.bookRepo.DeleteBookByID(id)
 
 }
