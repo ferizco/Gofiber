@@ -8,6 +8,7 @@ import (
 type BookUsecase interface {
 	GetBooks() ([]models.Book, error)
 	AddBook(judul, penulis, rating string) error
+	DeleteBook(id int) error
 }
 
 type bookUsecase struct {
@@ -32,4 +33,10 @@ func (uc *bookUsecase) AddBook(judul, penulis, rating string) error {
 	}
 
 	return uc.bookRepo.Add(book)
+}
+
+func (uc *bookUsecase) DeleteBook(id int) error {
+
+	return uc.bookRepo.DeleteBookByID(id)
+
 }

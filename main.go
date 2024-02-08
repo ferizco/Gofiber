@@ -34,6 +34,7 @@ func main() {
 	app.Static("/", "./static")
 	app.Get("/", bookHandler.GetBooks)
 	app.Post("/add", bookHandler.AddBook)
+	app.Post("/delete/:id", bookHandler.DeleteBook)
 
 	// Start the server
 	log.Fatal(app.Listen(":3002"))

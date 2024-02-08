@@ -56,6 +56,7 @@
           <th>Book Subjects</th>
           <th>Author</th>
           <th>Rating</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -64,6 +65,11 @@
           <td>{{ .Judul }}</td>
           <td>{{ .Penulis }}</td>
           <td>{{ .Rating }}</td>
+          <td>
+            <form action="/delete/{{ .ID }}" method="post" style="display:inline;">
+              <button type="submit">Delete</button>
+            </form>
+          </td>
         </tr>
         {{ end }}
       </tbody>

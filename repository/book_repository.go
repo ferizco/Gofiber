@@ -8,6 +8,7 @@ import (
 type BookRepository interface {
 	GetAll() ([]models.Book, error)
 	Add(models.Book) error
+	DeleteBookByID(id int) error
 }
 
 type PostgreSQLRepository struct {
@@ -45,5 +46,13 @@ func (r *PostgreSQLRepository) Add(b models.Book) error {
 		return err
 	}
 
+	return nil
+}
+
+func (r *PostgreSQLRepository) DeleteBookByID(id int) error {
+	_, err := r.db.Exec("DELETE FROM books WHERE id = $1", id)
+	if err != nil {
+		return err
+	}
 	return nil
 }
