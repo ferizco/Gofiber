@@ -119,25 +119,9 @@ h2 {
     color: #f7d203;
   }
   
-  .star-item[data-rating="1"]::before {
-    content: '★';
-  }
+
   
-  .star-item[data-rating="2"]::before {
-    content: '★★';
-  }
   
-  .star-item[data-rating="3"]::before {
-    content: '★★★';
-  }
-  
-  .star-item[data-rating="4"]::before {
-    content: '★★★★';
-  }
-  
-  .star-item[data-rating="5"]::before {
-    content: '★★★★★';
-  }
 
 
 
