@@ -2,6 +2,7 @@ package repository
 
 import (
 	"database/sql"
+	"fmt"
 	"gofiber/models"
 )
 
@@ -9,6 +10,8 @@ type BookRepository interface {
 	GetAll() ([]models.Book, error)
 	Add(models.Book) error
 	DeleteBookByID(id int) error
+	GetBookByID(id int) (*models.Book, error)
+	UpdateBook(book *models.Book) error
 }
 
 type PostgreSQLRepository struct {
@@ -54,5 +57,38 @@ func (r *PostgreSQLRepository) DeleteBookByID(id int) error {
 	if err != nil {
 		return err
 	}
+	return nil
+}
+
+func (r *PostgreSQLRepository) GetBookByID(id int) (*models.Book, error) {
+	row := r.db.QueryRow("SELECT id, judul, penulis, rating FROM books WHERE id = $1", id)
+
+	var book models.Book
+
+	err := row.Scan(&book.ID, &book.Judul, &book.Penulis, &book.Rating)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return nil, fmt.Errorf("no book found with ID %d", id)
+		}
+		return nil, err
+	}
+
+	return &book, nil
+}
+
+func (r *PostgreSQLRepository) UpdateBook(book *models.Book) error {
+
+	_, err := r.GetBookByID(book.ID)
+	if err != nil {
+		return fmt.Errorf("failed to update book: %w", err)
+	}
+
+	query := "UPDATE books SET judul=$1, penulis=$2, rating=$3 WHERE id=$4"
+	_, err = r.db.Exec(query, book.Judul, book.Penulis, book.Rating, book.ID)
+
+	if err != nil {
+		return fmt.Errorf("failed to update book: %w", err)
+	}
+
 	return nil
 }

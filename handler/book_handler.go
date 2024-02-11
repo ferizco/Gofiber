@@ -55,3 +55,38 @@ func (h *BookHandler) DeleteBook(c *fiber.Ctx) error {
 
 	return c.Redirect("/")
 }
+
+func (h *BookHandler) EditBook(c *fiber.Ctx) error {
+
+	id := c.Params("id")
+
+	bookID, err := strconv.Atoi(id)
+	if err != nil {
+		return c.Status(fiber.StatusBadRequest).SendString("Invalid Book ID")
+	}
+
+	book, err := h.bookUsecase.GetBookByID(bookID)
+	if err != nil {
+		return c.Status(fiber.StatusInternalServerError).SendString("Failed to get the book")
+	}
+
+	return c.Render("edit", fiber.Map{"Book": book})
+}
+
+func (h *BookHandler) UpdateBook(c *fiber.Ctx) error {
+	id := c.Params("id")
+	judul := c.FormValue("judul")
+	penulis := c.FormValue("penulis")
+	rating := c.FormValue("rating")
+
+	bookID, err := strconv.Atoi(id)
+	if err != nil {
+		return c.Status(fiber.StatusBadRequest).SendString("Invalid Book ID")
+	}
+
+	if err := h.bookUsecase.UpdateBook(bookID, judul, penulis, rating); err != nil {
+		return c.Status(fiber.StatusInternalServerError).SendString("Failed to update the book")
+	}
+
+	return c.Redirect("/")
+}

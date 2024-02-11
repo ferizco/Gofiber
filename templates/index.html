@@ -61,9 +61,12 @@
           <td>{{ .Penulis }}</td>
           <td>{{ .Rating }}</td>
           <td>
-            <form action="/delete/{{ .ID }}" method="post" style="display:inline;">
-              <button type="submit">Delete</button>
-            </form>
+            <form action="/delete/{{ .ID }}" method="post" id="deleteForm" style="display:inline;">
+              <button type="submit" onclick="return confirmDelete()">Delete</button>
+          </form>
+            <form action="/edit/{{ .ID }}" method="get" style="display:inline;">
+              <button type="submit">Edit</button>
+            </form> 
           </td>
         </tr>
         {{ end }}
@@ -72,4 +75,9 @@
 </div>
 </div>
 </body>
+<script>
+  function confirmDelete() {
+      return confirm("Are you sure you want to delete this entry?");
+  }
+</script>
 </html>

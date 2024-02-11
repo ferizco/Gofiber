@@ -32,9 +32,13 @@ func main() {
 
 	// Set up routes
 	app.Static("/", "./static")
+	app.Static("/edit", "./static")
+
 	app.Get("/", bookHandler.GetBooks)
 	app.Post("/add", bookHandler.AddBook)
 	app.Post("/delete/:id", bookHandler.DeleteBook)
+	app.Get("/edit/:id", bookHandler.EditBook)
+	app.Post("/update/:id", bookHandler.UpdateBook)
 
 	// Start the server
 	log.Fatal(app.Listen(":3002"))
