@@ -4,6 +4,7 @@ import (
 	postgres "gofiber/database"
 	"gofiber/handler"
 	"gofiber/repository"
+	"gofiber/routes"
 	"gofiber/usecase"
 	"log"
 
@@ -30,15 +31,8 @@ func main() {
 	bookUsecase := usecase.NewBookUsecase(bookRepo)
 	bookHandler := handler.NewBookHandler(bookUsecase)
 
-	// Set up routes
-	app.Static("/", "./static")
-	app.Static("/edit", "./static")
-
-	app.Get("/", bookHandler.GetBooks)
-	app.Post("/add", bookHandler.AddBook)
-	app.Post("/delete/:id", bookHandler.DeleteBook)
-	app.Get("/edit/:id", bookHandler.EditBook)
-	app.Post("/update/:id", bookHandler.UpdateBook)
+	// Set up routes using the routes package
+	routes.SetRoutes(app, bookHandler)
 
 	// Start the server
 	log.Fatal(app.Listen(":3002"))
