@@ -72,7 +72,6 @@
         </td>
           <td>
             <form action="/delete/{{ .ID }}" method="post" id="deleteForm{{ .ID }}" style="display:inline;">
-              <!-- Add a data attribute to store the ID for deletion -->
               <button class="btn btn-danger" type="button" onclick="confirmDelete('{{ .ID }}', '{{ .Judul }}')">Delete</button>
           </form>
             <form action="/edit/{{ .ID }}" method="get" style="display:inline;">
