@@ -8,7 +8,10 @@ Simple CRUD Web Application built with Go and Fiber for the web framework. Using
 - Database with Postgresql
 - Fiber v2.52.0 for Web Framework
 - Clean Architecture
-- Datatables and SweetAlert for UI 
+- Datatables and SweetAlert for UI
+
+## Demo Program 
+Please follow this link https://youtu.be/BTXg951IZqM?si=5RBxiVht0erdvaAd
 
 ## Preview 
 
