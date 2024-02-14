@@ -13,7 +13,10 @@ Simple CRUD Web Application built with Go and Fiber for the web framework. Using
 ## Preview 
 
 ### Index Page 
-<img src="https://github.com/ferizco/Gofiber/assets/71595406/7dd31c29-5b93-4af8-a5a5-57f29b83355a" alt="Alt Text" width="600">
+<img src="https://github.com/ferizco/Gofiber/assets/71595406/122eff09-82ff-493a-8846-f40e06aeb2d9" alt="Alt Text" width="600">
 
 ### Edit Page 
-<img src="https://github.com/ferizco/Gofiber/assets/71595406/35b403a7-980c-4b3a-88c8-82d591c14ed8" alt="Alt Text" width="600">
+<img src="https://github.com/ferizco/Gofiber/assets/71595406/4850322e-0df5-4e42-ba2e-3476cd57ba1e" alt="Alt Text" width="600">
+
+### Delete Message
+<img src="https://github.com/ferizco/Gofiber/assets/71595406/5b03dbfe-1b55-435e-aae7-56efa3b0f79d" alt="Alt Text" width="600">
