@@ -16,7 +16,7 @@ function confirmDelete(id, judul) {
     return false;
 }
 
-// function for rendering star in table 
+// function for rendering star in table
 function renderStars(rating) {
     let stars = '';
     for (let i = 0; i < 5; i++) {
